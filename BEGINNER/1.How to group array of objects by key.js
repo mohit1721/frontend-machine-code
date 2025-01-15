@@ -32,11 +32,19 @@ function groupByType(collection) {
       }
       result[type].push(item); // Add the current item to the appropriate group
       return result; // Return the updated result object
+          // because it ensures that the updated result (accumulator) 
+    // is passed on to the next iteration of the reduce function.
     }, {}); // The initial value for result. This starts as an empty object.
       // Wrap the grouped object in an array as per the required format
     return [grouped];
   }
-  
+
+// JavaScript's reduce function allows you to accumulate a result across iterations,
+// and the type of the result depends entirely on the initial value you provide as the second argument to reduce.
+
+
+
+
 // Why prompt() doesn’t work in VS Code:
 // Browser-specific: prompt() is a method provided by the browser's window object (in JavaScript running in the browser), which allows user input through a dialog box.
 // Taking user input
