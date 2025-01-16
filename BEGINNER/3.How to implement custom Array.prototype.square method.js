@@ -9,6 +9,19 @@ Customization: You can add your own methods for common operations
 that might be used repeatedly across different parts of your code.
 
 */
+function squareB() {
+  const result = [];
+  this.forEach(element => {
+    result.push(Number((element * element).toFixed(10)));
+  });
+  return result;
+}
+function squareUsingReduce() {
+  return this.reduce((acc, element) => {
+    acc.push(Number((element * element).toFixed(10)));
+    return acc;
+  }, []);
+}
 
 function square() {
     // Use `this` to refer to the array calling the method
