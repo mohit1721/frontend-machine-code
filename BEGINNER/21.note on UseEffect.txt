@@ -1,0 +1,11 @@
+useEffect
+a)empty array-> 2 baar useEffect render...chahe statecount] update ho ya na ho....jb strictmode m ho
+b)no dependency, & not state update p- >  2 baar trigger…
+c)no depenceny , but now state[count+1] update..-> infinitely triggered
+/*why?
+Because, state update hone se component, re-render hota h, to pura code firse execute hogi, yani useEffect fir se run hoga, to fir se state update krega..fir se component re-render krega..
+& cycle on inifinite
+Till broser memory full & crashes
+*/
+
+d)ek hi baar update an state, but without dependency -> solve by useRef...false-> true
